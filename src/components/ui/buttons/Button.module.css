@@ -1,0 +1,16 @@
+.btn {
+    border: 1px solid #AAA;
+    border-radius: 10%;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    display: flex;
+    background-color: #DDD;
+    justify-content: center;
+    margin: auto;
+    stroke: #666;
+    stroke-width: 1.5; 
+}
+
+.btn:hover {
+    background-color: #BBB;
+}
