@@ -1,16 +1,36 @@
 .btn {
-    border: 1px solid #AAA;
-    border-radius: 10%;
-    min-width: 1.5rem;
-    min-height: 1.5rem;
-    display: flex;
-    background-color: #DDD;
-    justify-content: center;
-    margin: auto;
+    min-width: 2rem;
+    min-height: 1.85rem;
+    border-radius: 0;
+    background: #FAFAFA;
+    color: #666;
     stroke: #666;
-    stroke-width: 1.5; 
+    border: 1px solid #BBB;
+    margin-left: -1px;
+    padding: .5rem .75rem;
 }
 
 .btn:hover {
     background-color: #BBB;
+    border-color: #BBB;
+    color: #FFF;
+    stroke: #FFF;
+}
+
+.btn:first-of-type {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.btn:last-of-type {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active {
+    background-color: #333;
 }
