@@ -30,16 +30,32 @@ export const MenuDropDown = (props: {label: string, children: JSX.Element | JSX.
 };
 
 const toggle = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, itemId: string): void => {
+
+    // Needs to superceed and prevent the "random location" click listener
+    e.preventDefault();
+    e.stopPropagation();
+
     const itemClassList = document.getElementById(itemId).classList;
 
-    // Remove 'show' from other dropdown (not a simple classList.toggle())
-    if(itemClassList.contains(styles.dropdownMenuShow)){
-        itemClassList.remove(styles.dropdownMenuShow)
-    } else {
-        const elements = document.getElementsByClassName(styles.dropdownMenuShow); 
-        for (let i = 0; i < elements.length; i++) {
-            elements[i].classList.remove(styles.dropdownMenuShow);
-        }
+    // Record the dropdown last known state
+    const isDropdownDisplayed = itemClassList.contains(styles.dropdownMenuShow);
+
+    // Remove 'show' from all dropdowns (not a simple classList.toggle())
+    hideAllDropdown();
+
+    // Display the dropdown if it wasn't and
+    // Add a "random location" click listener to hide the dropdown(s) after a click on the page
+    if(!isDropdownDisplayed){
         itemClassList.add(styles.dropdownMenuShow)
+        document.addEventListener('click', hideAllDropdown);
     }
 };
+
+const hideAllDropdown = (): void => {
+    const elements = document.getElementsByClassName(styles.dropdownMenuShow); 
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.remove(styles.dropdownMenuShow);
+    }
+    // Removes the "random location" click listener as dropdowns are now all hidden
+    document.removeEventListener('click', hideAllDropdown);
+}

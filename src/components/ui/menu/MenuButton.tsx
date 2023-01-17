@@ -1,20 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppRoutes } from '../../../navigation/AppRoutes.enum';
+import { AppRoute } from '../../../navigation/AppRoute.class';
 import * as styles from './Menu.module.css';
 
-export const MenuButton = (props: {label: string, to: AppRoutes | null}) => {
+export const MenuButton = (props: {label: string, to?: AppRoute}) => {
 
     const navigate = useNavigate();
 
     const handleClick = (): void => {
-        if(props.to) navigate(props.to);
+        if(props.to) navigate(props.to.getUri());
         return;
     };
 
     return (
-        <li className={styles.navItem}>
-            <button className={styles.menuBtn} onClick={handleClick}>{props.label}</button>
+        <li className={styles.navLink}>
+            <button onClick={handleClick}>{props.label}</button>
         </li>
     );
 };

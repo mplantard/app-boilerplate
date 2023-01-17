@@ -4,11 +4,15 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: .5rem 1rem;
+    padding: 0rem 1rem;
     background-color: #333;
     color: #DDD;
     stroke: #DDD;
     box-sizing: border-box;
+}
+
+.navbarToggler {
+    padding: .5rem 0;
 }
 
 .navbarToggler:not(:disabled):not(.disabled) {
@@ -19,6 +23,10 @@
     flex-basis: 100%;
     flex-grow: 1;
     align-items: center;
+}
+
+.navbarCollapse.navbarCollapseShow {
+    display: block;
 }
 
 .collapse {
@@ -50,6 +58,10 @@
 .navLink {
     display: block;
     padding: .5rem 1rem;
+}
+
+.navLink:hover {
+    color: #FFF;
 }
 
 .dropdownToggle::after {
@@ -107,6 +119,10 @@
     border: 0;
 }
 
+.dropdownItem:hover {
+    background-color: #DDD;
+}
+
 @media (min-width: 992px) {
     .navbarExpand {
         flex-flow: row nowrap;
@@ -122,6 +138,11 @@
         flex-flow: row nowrap;
         justify-content: flex-start;
         flex-basis: auto;
+    }
+
+    .navbarExpand .navbarNav {
+        flex-direction: row;
+        gap: 5;
     }
 
     .navbarExpand .navbarNav .navLink {

@@ -1,0 +1,23 @@
+.mainPane {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    height: 70vh;
+    margin: auto;
+}
+
+.pane {
+    width: 60vw;
+    height: 10vh;
+    text-align: center;
+}
+
+.pane > span {
+    font-size: min(10vw, 12vh);
+}
+
+.pane > p {
+    font-size: max(1rem, min(4vw, 4vh));
+    padding-top: 8vh;
+}
