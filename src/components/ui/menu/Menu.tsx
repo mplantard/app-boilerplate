@@ -4,10 +4,10 @@ import { MenuToggler } from './MenuToggler';
 
 export const Menu = (props: {children: JSX.Element | JSX.Element[]}) => {
     return(
-        <nav className={styles.navBar}>
+        <nav className={styles.navbar + ' ' + styles.navbarExpand}>
             <MenuToggler/>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto" style={{marginRight: 'auto'}}>
+            <div className={styles.collapse + ' ' + styles.navbarCollapse} id="navbarSupportedContent">
+                <ul className={styles.navbarNav}>
                     {props.children}
                 </ul>
             </div>

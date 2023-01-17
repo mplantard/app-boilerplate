@@ -6,13 +6,17 @@ export const MenuToggler = () => {
     return (
         <button
             className={styles.navbarToggler}
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
         >
-            <HamburgerIcon width={24} height={24}/>
+            <span
+                className={styles.navbarTogglerIcon}>
+                    <HamburgerIcon width={24} height={24}/>
+            </span>
         </button>
     );
 };
