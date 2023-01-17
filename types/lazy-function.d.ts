@@ -1,3 +1,3 @@
-interface LazyFunction {
+interface EventHandler {
     (e: React.MouseEvent<HTMLInputElement>): void
 }
