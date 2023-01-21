@@ -5,34 +5,34 @@ import { MenuDropDownItem } from "./components/ui/menu/MenuDropDownItem";
 import { Menu } from "./components/ui/menu/Menu";
 import { AppRoute } from "./navigation/AppRoute.class";
 import { MenuButton } from "./components/ui/menu/MenuButton";
-import { ERoutes } from "./navigation/ERoutes.enum";
+import { ERoute } from "./navigation/ERoute.enum";
 import { Spinner } from "./components/ui/spinner/Spinner";
 
 // Lazy loading of pages
 const Home = lazy(() => import("./components/pages/home/Home"));
 const DummyPage = lazy(() => import("./components/pages/dummy-page/DummyPage"));
-const NotFound = lazy(() => import("./components/not-found/NotFound"));
+const NotFound = lazy(() => import("./components/pages/not-found/NotFound"));
 
 export const App = () => {
     return (
         <>
             <Menu>
-                <MenuButton label="Home" to={new AppRoute(ERoutes.Home)}/>
+                <MenuButton label="Home" to={new AppRoute(ERoute.Home)}/>
                 <MenuDropDown label="Dropdown 1">
-                    <MenuDropDownItem label="Page 1" to={new AppRoute(ERoutes.Page, '1')}/>
-                    <MenuDropDownItem label="Page 2" to={new AppRoute(ERoutes.Page, '2')}/>
-                    <MenuDropDownItem label="Page 3" to={new AppRoute(ERoutes.Page, '3')}/>
+                    <MenuDropDownItem label="Page 1" to={new AppRoute(ERoute.Page, '1')}/>
+                    <MenuDropDownItem label="Page 2" to={new AppRoute(ERoute.Page, '2')}/>
+                    <MenuDropDownItem label="Page 3" to={new AppRoute(ERoute.Page, '3')}/>
                 </MenuDropDown>
                 <MenuDropDown label="Dropdown 2">
-                    <MenuDropDownItem label="Page 4" to={new AppRoute(ERoutes.Page, '4')}/>
-                    <MenuDropDownItem label="Page 5" to={new AppRoute(ERoutes.Page, '5')}/>
-                    <MenuDropDownItem label="Page 6" to={new AppRoute(ERoutes.Page, '6')}/>
+                    <MenuDropDownItem label="Page 4" to={new AppRoute(ERoute.Page, '4')}/>
+                    <MenuDropDownItem label="Page 5" to={new AppRoute(ERoute.Page, '5')}/>
+                    <MenuDropDownItem label="Page 6" to={new AppRoute(ERoute.Page, '6')}/>
                 </MenuDropDown>
             </Menu>
             <Suspense fallback={<Spinner/>}>
                 <Routes>
-                    <Route path={ERoutes.Home} element={<Home/>}/>
-                    <Route path={ERoutes.Page + '/:id'} element={<DummyPage/>}/>
+                    <Route path={ERoute.Home} element={<Home/>}/>
+                    <Route path={ERoute.Page + '/:id'} element={<DummyPage/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Suspense>

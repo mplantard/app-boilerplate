@@ -1,4 +1,4 @@
-export enum ERoutes {
+export enum ERoute {
     Home = '/',
     Page = '/Page',
 }

@@ -1,4 +1,4 @@
-import { ERoutes } from "./ERoutes.enum";
+import { ERoute } from "./ERoute.enum";
 
 export interface uriParams {
     key: string,
@@ -11,11 +11,11 @@ export const isUriParams = (test: uriParams[] | null): test is uriParams[] => {
 
 export class AppRoute {
 
-    private baseUri: ERoutes;
+    private baseUri: ERoute;
     private variableUri: string | null;
     private params: uriParams[] | null;
 
-    public constructor(baseUri: ERoutes, variableUri?: string | number, params?: uriParams[]){
+    public constructor(baseUri: ERoute, variableUri?: string | number, params?: uriParams[]){
         this.baseUri = baseUri;
         this.variableUri = variableUri ? variableUri.toString() : null;
         this.params = params ?? null;
