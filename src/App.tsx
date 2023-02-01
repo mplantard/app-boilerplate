@@ -22,8 +22,8 @@ export const App = () => {
             </Menu>
             <Suspense fallback={<Spinner/>}>
                 <Routes>
-                    <Route path={ERoutes.Home} element={<Home/>}/>
-                    <Route path={ERoutes.Page + '/:id'} element={<DummyPage/>}/>
+                    <Route path={ERoute.Home} element={<Home/>}/>
+                    <Route path={ERoute.Page + '/:id'} element={<DummyPage/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Suspense>
@@ -56,4 +56,4 @@ export const App = () => {
         </>
         
     );
-};
+};*/
