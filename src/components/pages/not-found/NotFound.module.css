@@ -13,11 +13,24 @@
     text-align: center;
 }
 
-.pane > span {
+.pane > div {
     font-size: min(10vw, 12vh);
+}
+
+.pane > div > div {
+    display: inline-block;
 }
 
 .pane > p {
     font-size: max(1rem, min(4vw, 4vh));
     padding-top: 8vh;
 }
+
+.arm {
+    transition: .3s ease;
+}
+
+.arm.up {
+    translate: 0 -1vh;
+}
+
