@@ -11,6 +11,10 @@
     box-sizing: border-box;
 }
 
+.navbar.vertical {
+    display: inline-block;
+}
+
 .navbarToggler {
     padding: .5rem 0;
 }
@@ -124,9 +128,13 @@
 }
 
 @media (min-width: 992px) {
-    .navbarExpand {
+    .navbarExpand:not(.vertical) {
         flex-flow: row nowrap;
         justify-content: flex-start;
+    }
+
+    .navbarExpand.vertical {
+        width: max(15vw, 200px);
     }
 
     .navbarToggler {
@@ -140,7 +148,7 @@
         flex-basis: auto;
     }
 
-    .navbarExpand .navbarNav {
+    .navbarExpand:not(.vertical) .navbarNav {
         flex-direction: row;
         gap: 5;
     }

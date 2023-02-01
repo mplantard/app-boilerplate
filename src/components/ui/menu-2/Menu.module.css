@@ -1,0 +1,77 @@
+.navbar {
+    /*position: fixed;
+    top: 0;
+    left: 0;*/
+    height: 100%;
+    width: 100%;
+    background-color: #11101D;
+    color: white;
+    stroke: white;
+    font-size: .8rem;
+    transition: all .5s ease-in;
+    display: inline-block;
+}
+
+.navLinks {
+    height: 100%;
+}
+
+.togglerIcon {
+    padding: .7rem .3rem .3rem .4rem;
+    width: 2.3rem;
+    cursor: pointer;
+}
+
+.togglerIcon:hover{
+    background-color: rgb(51, 90, 153);
+}
+
+.togglerIcon svg {
+    transform: rotate(90deg);
+    transition: all .3s ease-in;
+}
+
+.menuLink  {
+    padding: .8rem .6rem .6rem .6rem;
+    position: relative;
+}
+
+.menuLink:hover{
+    background-color: rgb(51, 90, 153);
+}
+
+.menuLink > a {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.linkLabel {
+    width: 100%;
+}
+
+.expandArrow {
+    padding-right: 20px;
+    /*position: absolute;*/
+    /*right: 2rem;*/
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        width: max(220px, 15%);
+    }
+
+    .navbar.collapsed {
+        width: 3.2rem;
+        overflow: hidden;
+    }
+
+    .togglerIcon svg {
+        transform: rotate(180deg);
+    }
+
+    .togglerIcon.collapsed svg {
+        transform: rotate(0deg);
+    }
+}
