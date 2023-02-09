@@ -4,13 +4,16 @@ import { MenuToggler } from './MenuToggler';
 
 const collapsableMenuId = crypto.randomUUID();
 
-export const Menu = (props: {children: JSX.Element | JSX.Element[]}) => {
+export const Menu = (props: {isVertical?: boolean, children: JSX.Element | JSX.Element[]}) => {
+
+    const { isVertical, children} = props;
+
     return(
-        <nav className={styles.navbar + ' ' + styles.navbarExpand}>
+        <nav className={`${styles.navbar} ${styles.navbarExpand} ${isVertical ? styles.vertical : ''}`}>
             <MenuToggler menuId={collapsableMenuId}/>
             <div className={styles.collapse + ' ' + styles.navbarCollapse} id={collapsableMenuId}>
                 <ul className={styles.navbarNav}>
-                    {props.children}
+                    {children}
                 </ul>
             </div>
         </nav>

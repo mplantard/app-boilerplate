@@ -56,10 +56,4 @@
 
 .iconLink {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.linkName {
-    font-weight: 1.2rem;
 }
