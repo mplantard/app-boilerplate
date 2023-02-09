@@ -1,0 +1,65 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: min(15rem, 100%);
+    background-color: #11101D;
+}
+
+.logoDetails {
+    height: 2.8rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logoDetails i {
+    font-size: 2rem;
+    color: #FFF;
+    height: 3.3rem;
+    min-width: 4rem;
+    text-align: center;
+    line-height: 3.3rem;
+}
+
+.logoDetails .logoName {
+    font-size: 1.4rem;
+    color: #FFF;
+}
+
+.navLinks {
+    background-color: red;
+    height: 100%;
+    padding-top: 1rem;
+}
+
+.navLinks li {
+    position: relative;
+    list-style: none;
+}
+
+.navLinks li i {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    min-width: 4rem;
+    text-align: center;
+    color: #FFF;
+}
+
+.navLinks li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #FFF;
+}
+
+.iconLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.linkName {
+    font-weight: 1.2rem;
+}
